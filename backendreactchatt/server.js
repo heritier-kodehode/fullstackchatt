@@ -1,9 +1,14 @@
 //initialization of dependenci packages
 const express = require("express");
+const colors = require("colors");
 const dotenv = require("dotenv").config();
+const connectDB = require("./config/db");
+
+connectDB();
+
 const port = process.env.PORT || 5000;
 
-//errorhandler import
+//errorhandler import from middleware folder
 const { errorHandler } = require("./middleware/errorMiddleware");
 //initializing express app
 const app = express();
